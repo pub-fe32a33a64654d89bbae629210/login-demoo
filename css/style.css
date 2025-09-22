@@ -2,13 +2,13 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,Helvetica,sans-serif; }
 html,body { height:100%; }
 
-/* Page background (Strato-like) */
+/* White background */
 body {
   display:flex;
   justify-content:center;
   align-items:flex-start;
   min-height:100vh;
-  background: linear-gradient(135deg,#0056a6,#007bff);
+  background:#ffffff;   /* changed from gradient */
   color:#222;
   position:relative;
   padding-top:72px; /* space for header logo */
@@ -21,11 +21,7 @@ header {
   left:18px;
   z-index:1000;
 }
-header img {
-  height: 80px;   /* try 60px, 80px, 100px depending on how big you want */
-  display: block;
-}
-
+header img { height:80px; display:block; }
 
 /* Login card */
 .login-box {
@@ -38,12 +34,34 @@ header img {
   text-align:center;
 }
 .login-box h1 { color:#0056a6; margin-bottom:1rem; font-size:1.25rem; }
-.login-box input {
-  width:100%; padding:12px; margin:0.5rem 0; border:1px solid #ccc; border-radius:6px;
+
+/* Input group with icons */
+.input-group {
+  position:relative;
+  margin:0.5rem 0;
 }
+.input-group i {
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#888;
+  font-size:1rem;
+}
+.input-group input {
+  width:100%;
+  padding:12px 12px 12px 40px; /* space for icon */
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+/* Button */
 .login-box button {
-  width:100%; padding:12px; background:#0056a6; color:#fff; border:none; border-radius:6px;
-  font-weight:700; cursor:pointer; margin-top:0.8rem;
+  width:100%; padding:12px;
+  background:#0056a6; color:#fff;
+  border:none; border-radius:6px;
+  font-weight:700; cursor:pointer;
+  margin-top:0.8rem;
 }
 .login-box a.forgot { display:block; margin-top:0.9rem; color:#0056a6; text-decoration:none; font-size:0.9rem; }
 .login-box a.forgot:hover { text-decoration:underline; }
@@ -58,11 +76,3 @@ header img {
   animation: spin 1s linear infinite;
 }
 @keyframes spin { 100% { transform:rotate(360deg); } }
-
-/* Dark mode fallback */
-@media (prefers-color-scheme:dark) {
-  body { background: linear-gradient(135deg,#002c57,#004080); }
-  .login-box { background:#1e1e1e; color:#eee; }
-  .login-box input { background:#2a2a2a; color:#fff; border:1px solid #444; }
-}
-
