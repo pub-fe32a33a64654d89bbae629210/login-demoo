@@ -21,7 +21,11 @@ header {
   left:18px;
   z-index:1000;
 }
-header img { height:40px; display:block; }
+header img {
+  height: 80px;   /* try 60px, 80px, 100px depending on how big you want */
+  display: block;
+}
+
 
 /* Login card */
 .login-box {
@@ -61,3 +65,4 @@ header img { height:40px; display:block; }
   .login-box { background:#1e1e1e; color:#eee; }
   .login-box input { background:#2a2a2a; color:#fff; border:1px solid #444; }
 }
+
